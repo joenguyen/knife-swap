@@ -1,0 +1,16 @@
+AllCops:
+  Exclude:
+    - Guardfile
+    - vendor/**/*
+Metrics/AbcSize:
+  Enabled: false
+Metrics/LineLength:
+  Max: 150
+Metrics/MethodLength:
+  Max: 50
+Style/SpecialGlobalVars:
+  Enabled: false
+Style/FileName:
+  Enabled: false
+Style/GuardClause:
+  Enabled: false
