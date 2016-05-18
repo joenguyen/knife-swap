@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/joenguyen/knife-swap.svg?branch=master)](https://travis-ci.org/joenguyen/knife-swap) [![Coverage Status](https://coveralls.io/repos/github/joenguyen/knife-swap/badge.svg?branch=master)](https://coveralls.io/github/joenguyen/knife-swap?branch=master) [![Code Climate](https://codeclimate.com/github/joenguyen/knife-swap/badges/gpa.svg)](https://codeclimate.com/github/joenguyen/knife-swap)
+
 # Knife Swap
 
 Knife Swap was created to manage multiple knife configurations.  This functionality exists in [knife-block](https://github.com/knife-block/knife-block), which I am a huge fan of, but it doesn't seem to have Windows support because of the way it works under the hood.
