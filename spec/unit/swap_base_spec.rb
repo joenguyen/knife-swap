@@ -27,11 +27,11 @@ describe Chef::Knife::SwapBase do
     end
 
     it 'returns false when comparing different files' do
-      expect(compare_configs('spec/fixtures/chef/knife-org1.rb','spec/fixtures/chef/knife-org2.rb')).to eq(false)
+      expect(compare_configs('spec/fixtures/chef/knife-org1.rb', 'spec/fixtures/chef/knife-org2.rb')).to eq(false)
     end
 
     it 'returns true when comparing identical files' do
-      expect(compare_configs('spec/fixtures/chef/knife-org2.rb','spec/fixtures/chef/knife-org3.rb')).to eq(true)
+      expect(compare_configs('spec/fixtures/chef/knife-org2.rb', 'spec/fixtures/chef/knife-org3.rb')).to eq(true)
     end
   end
 

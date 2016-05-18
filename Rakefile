@@ -1,17 +1,18 @@
-require 'rubygems'
-require 'rubygems/package_task'
-require 'rdoc/task'
+require 'bundler'
+require 'rspec/core/rake_task'
+require 'coveralls/rake/task'
+require 'yard'
 
-begin
-  require 'rspec/core/rake_task'
+Bundler::GemHelper.install_tasks
+RSpec::Core::RakeTask.new(:spec)
+Coveralls::RakeTask.new
 
-  task :default => :spec
-
-  desc "Run all specs in spec directory"
-  RSpec::Core::RakeTask.new(:spec) do |t|
-    t.pattern = 'spec/unit/**/*_spec.rb'
-  end
-
-rescue LoadError
-  STDERR.puts "\n*** RSpec not available. (sudo) gem install rspec to run unit tests. ***\n\n"
+task :style do
+  sh 'rubocop'
 end
+
+task :doc do
+  sh 'yard'
+end
+
+task default: [:style, :spec, :doc, 'coveralls:push']

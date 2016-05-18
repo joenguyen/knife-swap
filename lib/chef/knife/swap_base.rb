@@ -1,5 +1,6 @@
+# top level class
 class Chef
-  # knife
+  # knife sub class
   class Knife
     # base module
     module SwapBase

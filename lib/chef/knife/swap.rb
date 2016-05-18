@@ -7,10 +7,12 @@ class Chef
 
     # default command without parameters
     class Swap < Knife
+      # banner help
       banner 'knife swap CONFIG'
 
+      # begin
       def run
-        if @name_args.length == 0
+        if @name_args.empty?
           print_current_configs
           print_available_configs
         else
@@ -18,14 +20,5 @@ class Chef
         end
       end
     end
-
-    # # command to set your default knife.rb config
-    # class RackUse < Knife
-    #   banner 'knife rack use CONFIG'
-    #
-    #   def run
-    #     use_config(@name_args[0])
-    #   end
-    # end
   end
 end
