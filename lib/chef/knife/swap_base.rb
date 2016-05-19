@@ -56,7 +56,11 @@ class Chef
         current_configs.each do |cfg|
           configs << File.basename(cfg, '.rb').split('-')[1..-1].join('-')
         end
-        puts "#{Chef::Knife.ui.color('current[', :cyan)}#{configs.join(',')}#{Chef::Knife.ui.color(']', :cyan)}"
+        if configs.empty? && File.exist?(knife_config)
+          puts Chef::Knife.ui.color("Available configs do not match current knife.rb.\nDid you modify knife.rb or matching knife-<config>.rb?", :red)
+        else
+          puts "#{Chef::Knife.ui.color('current[', :cyan)}#{configs.join(',')}#{Chef::Knife.ui.color(']', :cyan)}"
+        end
       end
 
       # copy config to knife.rb
